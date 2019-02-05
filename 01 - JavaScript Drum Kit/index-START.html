@@ -68,6 +68,9 @@
     // setTimeout(() => {
     //   key.classList.remove('playing');
     // }, 50);
+    key.addEventListener('transitionend', () => {
+      key.classList.remove('playing');
+    })
     
 
     
