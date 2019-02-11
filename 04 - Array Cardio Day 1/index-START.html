@@ -31,28 +31,69 @@
 
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
-
+    const yearBornFilter = inventors.filter(el => el.year >= 1500 && el.year < 1600);
+    
+    // console.table(yearBornFilter);
+    
     // Array.prototype.map()
     // 2. Give us an array of the inventors' first and last names
+    const names = inventors.map((el) => {
+      return [el.first, el.last];
+    });
+    // console.table(names);
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
+    const byAge = inventors.sort((a, b) => {
+      return a.year > b.year ? 1 : -1;
+    })
+    // console.table(byAge); 
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
-
+    const totalYears = inventors.reduce((total, inventor) => {
+      return total + (inventor.passed - inventor.year);
+    }, 0);
+    // console.log(totalYears);
+    
     // 5. Sort the inventors by years lived
-
+    const yearsLived = inventors.sort((a, b) => {
+      return (a.passed - a.year) > (b.passed - b.year) ? -1 : 1;
+    })
+    // console.table(yearsLived);
+    
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+    // const category = document.querySelector('.mw-category');
+    // const blvds = [...category.querySelectorAll('a')];
+    // const de = blvds
+    //             .map(blvd => blvd.textContent)
+    //             .filter(item => item.includes('de'));
+    
 
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+    let sorts = people.sort((a, b) => {
+      return a.split(', ')[0] > b.split(', ')[0] ? 1 : -1;
+    })
+    // console.log(sorts);
+    
+    
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+    const totals = data.reduce((obj, item) => {
+      if (!obj[item]) obj[item] = 0;
+      obj[item]++;
+  
+      return obj;
+      
+      
+    }, {})
+    console.log(totals);
+    
 
   </script>
 </body>
