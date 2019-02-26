@@ -30,7 +30,7 @@ body {
 /* This css is only applied when fullscreen is active. */
 .player:fullscreen {
   max-width: none;
-  width: 100%;
+  width: 20%;
 }
 
 .player:-webkit-full-screen {
@@ -52,6 +52,19 @@ body {
   padding: 0;
   cursor: pointer;
   max-width: 50px;
+}
+
+.player_size {
+  background: none;
+  color: white;
+  border: none;
+  line-height: 1;
+  text-align: center;
+  outline: 0;
+  padding: 0;
+  cursor: pointer;
+  max-width: 50px;
+
 }
 
 .player__button:focus {

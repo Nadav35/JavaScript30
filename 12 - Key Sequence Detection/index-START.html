@@ -7,6 +7,20 @@
 </head>
 <body>
 <script>
+
+  let wordsArray = [];
+  let secretWord = "daniandella";
+  window.addEventListener('keyup', (e) => {
+    wordsArray.push(e.key);
+    
+    wordsArray.splice(-12, wordsArray.length - secretWord.length );
+    if (wordsArray.join('').includes(secretWord)) {
+      cornify_add();
+    }
+    
+    
+    
+  })
 </script>
 </body>
 </html>
